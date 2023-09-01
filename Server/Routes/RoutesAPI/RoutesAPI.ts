@@ -2,10 +2,8 @@ import express from "express";
 import { UserController } from "../../Controllers/UserController";
 import { ResponseHandler } from "../../Helpers/ResponseHandler";
 import { ObjHandler } from "../../Helpers/ObjectHandler";
-import { ArrayHandler } from "../../Helpers/ArrayHandler";
 const userController: UserController = new UserController();
 const objHandler: ObjHandler = new ObjHandler();
-const arrayHandler: ArrayHandler = new ArrayHandler();
 const responseHandler: ResponseHandler = new ResponseHandler();
 
 export class RoutesAPI {
@@ -45,7 +43,7 @@ export class RoutesAPI {
         this.router.get("/api/users/getUsers", async (req: express.Request, res: express.Response) => {
             try {
                 const result: object = await userController.GetUsers();
-                const IsArrayNotEmpty: boolean = arrayHandler.IsArrayNotEmpty(result);
+                const IsArrayNotEmpty: boolean = objHandler.IsArrayNotEmpty(result);
                 if (IsArrayNotEmpty == false) {
                     responseHandler.ReturnResponseMessage("Error", "Users not founded.", 404, res);
                 } else {
