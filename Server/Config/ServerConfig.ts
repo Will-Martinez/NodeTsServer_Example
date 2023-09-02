@@ -17,7 +17,7 @@ export class ServerConfig {
 
     private async ConnectDatabase(): Promise<void> {
         try {
-            await mongoClient.StartConnecetion();
+            await mongoClient.StartConnection();
         } catch (error) {
             console.error(`${this.local} Error: ${error}`);
             throw error.message;

@@ -1,9 +1,7 @@
 import express from "express";
 import { UserController } from "../../Controllers/UserController";
 import { ResponseHandler } from "../../Helpers/ResponseHandler";
-import { ObjHandler } from "../../Helpers/ObjectHandler";
 const userController: UserController = new UserController();
-const objHandler: ObjHandler = new ObjHandler();
 const responseHandler: ResponseHandler = new ResponseHandler();
 
 export class RoutesAPI {
