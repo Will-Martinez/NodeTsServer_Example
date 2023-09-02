@@ -15,7 +15,7 @@ export class MongoConnection{
         }
     }
 
-    public async StartConnecetion(): Promise<void> {
+    public async StartConnection(): Promise<void> {
         try {
             await this.DatabaseConnection();
         } catch (error) {
